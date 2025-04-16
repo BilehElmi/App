@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: .
+    destination: /home/ec2-user/flask-cicd-demo
+hooks:
+  AfterInstall:
+    - location: scripts/restart_flask.sh
+      timeout: 300
+      runas: ec2-user
